@@ -55,7 +55,7 @@ for i = 1:max
 
     dotted_line = plot([x2 x2],[0 f(x2)],"r", "LineWidth", 1.5, "LineStyle", ":");
     plot(x2, f(x2), 'ro', 'MarkerFaceColor', 'r', 'MarkerSize', 4)
-    text(x2, f(x2), "  f(𝑥_{" + (i + 1) + "})")
+    text(x2, f(x2), ["  f(𝑥_{" num2str(i + 1) "})"])
     pause(time)
 
     % condition

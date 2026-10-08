@@ -9,8 +9,16 @@ end
 
 tab = (max);
 
-y = sym(f);
-fp = matlabFunction(diff(y));
+% Derivative of f. MATLAB gets it from the Symbolic Math Toolbox;
+% Octave does not provide matlabFunction, so fall back to a central
+% difference (O(h^2), ~1e-12 for h=1e-6, far below tol=1e-4).
+if exist('sym', 'file') && exist('matlabFunction', 'file')
+    y = sym(f);
+    fp = matlabFunction(diff(y));
+else
+    h = 1e-6;
+    fp = @(x) (f(x+h) - f(x-h)) / (2*h);
+end
 
 x = linspace(x0-10, x0+10, 1000);
 
@@ -31,7 +39,7 @@ for i = 1:max
     tab(i) = x0;
 
     h1 = plot(x0, f(x0), 'go', 'MarkerFaceColor', 'g', 'MarkerSize', 6, 'LineWidth',2);
-    text(x0, f(x0)+0.5, "  𝑥_{"+ i + "}")
+    text(x0, f(x0)+0.5, ["  𝑥_{" num2str(i) "}"])
     pause(time)
     delete(h1)
     plot(x0, f(x0), 'bo', 'MarkerFaceColor', 'b', 'MarkerSize', 6, 'LineWidth',2)

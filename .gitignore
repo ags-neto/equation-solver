@@ -1,0 +1,7 @@
+# MATLAB autosave and workspace files
+*.asv
+*.m~
+*.mat
+
+# plot output captured by `make test` and `make demo`
+tests/.last-run.log
