@@ -174,7 +174,8 @@ files added here use LF.
 ## License
 
 MIT — see [`LICENSE`](LICENSE). The file was added on 2026-10-08 and carries the
-year of the first commit, 2022. This is coursework written by two people:
-`README.txt` names Ines Ferreira and Andre Neto as authors and maintainers,
-while `LICENSE` names Andre Neto, so the MIT terms are taken to be agreed
-between both authors.
+year of the first commit, 2022. This is coursework written by two people, so the
+copyright line names both: **Inês Ferreira and André Neto**. `README.txt` records
+them as the authors and maintainers — "Ines Ferreira - inesjorge300@gmail.com" and
+"Andre Neto - netoandre.neto@gmail.com" — and `LICENSE` carried only André Neto;
+the co-author has not been separately asked about this licence pass.
